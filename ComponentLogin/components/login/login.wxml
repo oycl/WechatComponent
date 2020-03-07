@@ -1,0 +1,35 @@
+<!--components/login/login.wxml-->
+<view class="{{show ? 'weui-show' :'weui-hidden'}}">
+  <view class="weui-mask init" data-type="tap"></view>
+  <view class="weui-half-screen-dialog">
+    <view class="weui-half-screen-dialog__hd">
+      <view class="weui-half-screen-dialog__hd__side" bindtap="close" data-type="close">
+        <view class="weui-icon-btn weui-icon-btn_close">关闭</view>
+      </view>
+      <view class="weui-half-screen-dialog__hd__main">
+        <block wx:if="{{title}}">
+          <text class="weui-half-screen-dialog__title">{{title}}</text>
+          <text class="weui-half-screen-dialog__subtitle">{{subTitle}}</text>
+        </block>
+        <block wx:else>
+          <view class="weui-half-screen-dialog__title"><slot name="title"></slot></view>
+        </block>
+      </view>
+    </view>
+    <view class="weui-half-screen-dialog__bd">
+      <block wx:if="{{title}}">
+        <view class="weui-half-screen-dialog__desc">{{desc}}</view>
+        <view class="weui-half-screen-dialog__tips">{{tips}}</view>
+      </block>
+      <slot name="desc" wx:else></slot>
+    </view>
+    <view class="weui-half-screen-dialog__ft">
+      <block >
+        <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="login" loading="{{isLogining}}" class="weui-btn-login">
+          {{ isLogining ? '正在登录':'授权并登录' }}
+        </button>
+        <view wx:else bindtap="close" class="weui-btn-close">当前微信版本不支持，请升级微信到最新版本</view>
+      </block>
+    </view>
+  </view>
+</view>

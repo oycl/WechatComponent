@@ -1,0 +1,17 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.intra {
+  padding: 10rpx 20rpx;
+  font-size: 0.8em;
+}
+
+.btn-box {
+  margin: 50rpx 0;
+}
+.btn{
+  background-color: #5500FF;
+  color: #ffffff;
+}

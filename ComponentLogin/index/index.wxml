@@ -1,0 +1,14 @@
+<view class="intro">登录组件使用说明</view>
+<view class="intra">1、组件路径 /components/login/login</view>
+<view class="intra">2、复制 登录组件 到自己项目</view>
+<view class="intra">3、修改登录组件 login.wxml 中相关描述文字</view>
+<view class="intra">4、修改登录组件 login.js 中 login 方法中 登录接口URL 及请求方式</view>
+<view class="intra">5、根目录 app.json 文件增加 usingComponents</view>
+<view class="intra">6、调用页面布局引用 登录组件</view>
+<view class="intra">7、组件传入 参数 show="布尔类型参数"</view>
+<view class="intra">8、组件传入 登录成功后需要执行的方法 bind:runEvent="方法"</view>
+<view class="btn-box">
+  <button class="btn" bindtap="tryLogin">试验一下</button>
+</view>
+
+<login show="{{showLogin}}" bind:runEvent="doSomething"></login>
